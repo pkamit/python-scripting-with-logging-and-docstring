@@ -6,11 +6,11 @@ from utils.models import Perceptron
 def main(data, m_name, p_name, eta, epochs):
     df_OR = pd.DataFrame(data)
     X, y = prepare_data(df_OR)
-    model_or = Perceptron(eta=eta, epochs=epochs)
-    model_or.fit(X, y)
-    _ = model_or.total_loss()
-    model_or.save(filename=m_name, model_dir="model")
-    save_plot(df_OR, model_or, filename=p_name)
+    model = Perceptron(eta=eta, epochs=epochs)
+    model.fit(X, y)
+    _ = model.total_loss()
+    model.save(filename=m_name, model_dir="model")
+    save_plot(df_OR, model, filename=p_name)
 
 
 if __name__ ==  "__main__":
