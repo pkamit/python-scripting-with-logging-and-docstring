@@ -4,7 +4,16 @@ from matplotlib.colors import ListedColormap
 import numpy as np
 import logging
 
+
 def prepare_data(df, target_col="y"):
+    """
+    it returns labels and dependent variables
+
+    :param df: This is dataframe
+    :param target_col: labels col_name defaults to y
+    :return:
+        tuple: label and x
+    """
     X = df.drop(target_col, axis=1)
 
     y = df[target_col]
